@@ -11,10 +11,6 @@ if (isset($_POST['logout']) && $_POST['logout']) {
   if (isset($_COOKIE['remember'])) unset($_COOKIE['remember']);
   setcookie('PHPSESSID', '', -1);
   session_destroy();
+  header('location: auth.php');
 }
-?>
 
-
-<form action="index.php" method="post">
-  <button type="submit" name="logout" value="true">выход</button>
-</form>
