@@ -6,7 +6,7 @@
  * Time: 21:01
  */
 
-if (isset($_POST['username'])) {
+if (isset($_COOKIE['username'])) {
   session_start();
 } else {
   header('location: auth.php');
