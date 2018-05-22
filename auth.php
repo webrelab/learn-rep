@@ -8,8 +8,9 @@
 
 if (isset($_POST['username'])) {
   session_start();
+  $_SESSION['username'] = $_POST['username'];
   if (isset($_POST['rememberme'])) {
-    setcookie('username', $_POST['username']);
+    setcookie('remember', true);
   }
   if (isset($_COOKIE['page'])) {
     setcookie('page', '', -1);
