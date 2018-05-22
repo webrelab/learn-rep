@@ -7,8 +7,10 @@
  */
 
 if (isset($_POST['username'])) {
-  setcookie('username', $_POST['username']);
   session_start();
+  if (isset($_POST['rememberme'])) {
+    setcookie('username', $_POST['username']);
+  }
   if (isset($_COOKIE['page'])) {
     setcookie('page', '', -1);
     header("location: {$_COOKIE['page']}.php");
@@ -17,3 +19,11 @@ if (isset($_POST['username'])) {
   }
 }
 
+?>
+
+<form action="auth.php" method="post">
+  <label for="username">Имя пользователя</label>
+  <input name="username" type="text" id="username"><br>
+  <input type="checkbox" name="rememberme" value="1" id="rememberme">
+  <label for="rememberme">запомнить меня</label>
+</form>
