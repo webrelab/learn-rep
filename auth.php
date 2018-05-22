@@ -25,6 +25,6 @@ if (isset($_POST['username'])) {
   <label for="username">Имя пользователя</label>
   <input name="username" type="text" id="username"><br>
   <input type="checkbox" name="rememberme" value="1" id="rememberme">
-  <label for="rememberme">запомнить меня</label>
+  <label for="rememberme">запомнить меня</label><br>
   <button type="submit">Войти</button>
 </form>
