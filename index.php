@@ -5,7 +5,7 @@
  * Date: 22.05.18
  * Time: 21:01
  */
-
+include_once 'logout.inc';
 if ((isset($_COOKIE['remember']) && $_COOKIE['remember']) || isset($_COOKIE['PHPSESSID'])) {
   session_start();
   $username = $_SESSION['username'];
@@ -23,6 +23,6 @@ if ((isset($_COOKIE['remember']) && $_COOKIE['remember']) || isset($_COOKIE['PHP
 <body>
   <h1>Главная страница</h1>
   <div>Вы вошли как <?php echo $username; ?></div>
-<?php include_once 'logout.inc'; ?>
+<?php include_once 'logout_button.inc'; ?>
 </body>
 </html>
