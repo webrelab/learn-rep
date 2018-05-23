@@ -6,7 +6,7 @@
  * Time: 10:59
  */
 
-if ((isset($_COOKIE['remember']) && $_COOKIE['remember']) || isset($_COOKIE['PHPSESSID'])) {
+if (isset($_COOKIE['PHPSESSID'])) {
   session_start();
 } else {
   header('location: auth.php');
