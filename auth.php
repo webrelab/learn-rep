@@ -8,6 +8,11 @@
 
 if (isset($_COOKIE['PHPSESSID'])) {
   session_start();
+  if (!isset($_SESSION['username'])) {
+    setcookie(session_name(), '', -1);
+    session_destroy();
+    header('location: auth.php');
+  }
   if (isset($_COOKIE['page'])) {
     header("location: {$_COOKIE['page']}.php");
   } else {
