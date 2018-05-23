@@ -22,6 +22,6 @@ setcookie('page', '', -1);
 <?php include_once 'logout.inc'; ?>
 <a href="first.php">Первая страница</a><br>
   <a href="second.php">Вторая страница</a><br>
-  <a href="page-3.php">Вторая страница</a>
+  <a href="page-3.php">Третья страница</a>
 </body>
 </html>
