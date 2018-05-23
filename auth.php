@@ -6,7 +6,7 @@
  * Time: 21:20
  */
 
-if ((isset($_COOKIE['remember']) && $_COOKIE['remember']) || isset($_COOKIE['PHPSESSID'])) {
+if (isset($_COOKIE['PHPSESSID'])) {
   session_start();
   if (isset($_COOKIE['page'])) {
     header("location: {$_COOKIE['page']}.php");
@@ -16,13 +16,12 @@ if ((isset($_COOKIE['remember']) && $_COOKIE['remember']) || isset($_COOKIE['PHP
 }
 
 if (isset($_POST['username'])) {
+  if (isset($_POST['rememberme']) && $_POST['rememberme'] == 1) {
+    ini_set('session.cookie_lifetime', 3600 * 24 * 7);
+  }
   session_start();
   $_SESSION['username'] = $_POST['username'];
-  if (isset($_POST['rememberme'])) {
-    setcookie('remember', true);
-  }
   if (isset($_COOKIE['page'])) {
-    setcookie('page', '', -1);
     header("location: {$_COOKIE['page']}.php");
   } else {
     header('location: index.php');
