@@ -8,7 +8,7 @@
 
 if (isset($_POST['logout']) && $_POST['logout']) {
   unset($_SESSION['username']);
-  if (isset($_COOKIE['remember'])) unset($_COOKIE['remember']);
+  if (isset($_COOKIE['remember'])) setcookie('remember', '', -1);
   setcookie('PHPSESSID', '', -1);
   session_destroy();
   header('location: auth.php');
