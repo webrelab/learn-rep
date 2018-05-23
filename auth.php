@@ -6,6 +6,15 @@
  * Time: 21:20
  */
 
+if ((isset($_COOKIE['remember']) && $_COOKIE['remember']) || isset($_COOKIE['PHPSESSID'])) {
+  session_start();
+  if (isset($_COOKIE['page'])) {
+    header("location: {$_COOKIE['page']}.php");
+  } else {
+    header('location: index.php');
+  }
+}
+
 if (isset($_POST['username'])) {
   session_start();
   $_SESSION['username'] = $_POST['username'];
