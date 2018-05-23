@@ -5,14 +5,8 @@
  * Date: 22.05.18
  * Time: 21:01
  */
-
-if ((isset($_COOKIE['remember']) && $_COOKIE['remember']) || isset($_COOKIE['PHPSESSID'])) {
-  session_start();
-  $username = $_SESSION['username'];
-} else {
-  header('location: auth.php');
-}
-
+include_once 'auth_check.inc';
+$username = $_SESSION['username'];
 ?>
 
 <!doctype html>
