@@ -7,6 +7,6 @@
  */
 ?>
 
-<form action="index.php" method="post">
+<form method="post">
   <button type="submit" name="logout" value="true">выход</button>
 </form>
