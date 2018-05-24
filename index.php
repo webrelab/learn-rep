@@ -13,7 +13,9 @@ setcookie('page', '', -1);
 <!doctype html>
 <html>
 <head>
-
+  <?php if(isset($_COOKIE['style'])): ?>
+  <link rel="stylesheet" href="style/<?php echo $_COOKIE['style'] . '.css'; ?>">
+  <?php endif; ?>
 </head>
 <body>
   <h1>Главная страница</h1>
@@ -24,5 +26,6 @@ setcookie('page', '', -1);
   <a href="second.php">Вторая страница</a><br>
   <a href="page-3.php">Третья страница</a><br>
   <a href="page-4.php">Четвертая страница</a><br>
+<?php include_once 'settings.php';?>
 </body>
 </html>
